@@ -1,4 +1,4 @@
-# DCSLED: Dynamic Contrastive Layer-wise Evolution Decoding
+# DCLED: Dynamic Contrastive Layer Evolution Decoding for improved Factuality Understanding in Large Language Models
 
 **Robust decoding framework for large language models**  
 Enhances truthfulness, reasoning, and long-context performance through adaptive layer-wise signal evolution, contrastive guidance, and entropy-aware blending.
