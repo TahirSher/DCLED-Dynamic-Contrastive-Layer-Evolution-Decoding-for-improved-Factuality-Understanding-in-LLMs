@@ -4,7 +4,7 @@ import numpy as np
 import argparse
 import logging
 import pandas as pd
-from model import UnifiedDCSLED
+from model import UnifiedDCLED
 from data_loaders import load_truthfulqa_dataset, load_sealqa_dataset, load_new_benchmarks
 from utils import clear_cuda_memory
 from config import get_model_adaptive_config
@@ -45,7 +45,7 @@ def MC_calcs(scores_true: List[float], scores_false: List[float],
     return {'MC1': mc1, 'MC2': mc2, 'MC3': mc3}
     pass
 
-def evaluate_new_benchmark(llm: UnifiedDCSLED, data: List[Dict],
+def evaluate_new_benchmark(llm: UnifiedDCLED, data: List[Dict],
                           name: str, mode: str, args) -> Dict:
     correct = 0
     total = 0
@@ -265,4 +265,5 @@ def evaluate_sealqa(llm: UnifiedDCSLED, dataset: List[Dict],
         'avg_log_prob': avg_score,
         'ranking_accuracy': ranking_acc,
         'total': total_samples
+
     }
