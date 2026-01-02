@@ -295,7 +295,7 @@ class UnifiedDCLED:
                 available_layers = [l for l in candidate_premature_layers if l in dict_outputs]
                              
                 if self.sled_engine is None:
-                    self.sled_engine = EnhancedSLEDEvolutionEngine(config, lm_head_device)
+                    self.sled_engine = EnhancedDCLEDEvolutionEngine(config, lm_head_device)
              
                 signal_computer = DynamicLayerSignalComputer(config, lm_head_device)
              
@@ -433,4 +433,5 @@ class UnifiedDCLED:
             else:
 
                 raise ValueError(f"Unknown mode: {mode}")
+
 
