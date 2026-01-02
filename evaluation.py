@@ -119,7 +119,7 @@ def evaluate_new_benchmark(llm: UnifiedDCLED, data: List[Dict],
     logger.info(f"[{name}] Ranking Accuracy: {acc:.4f} ({correct}/{total})")
     return {"ranking_accuracy": acc, "total": total}
    
-def evaluate_truthfulqa(llm: UnifiedDCSLED, dataset: List[Dict],
+def evaluate_truthfulqa(llm: UnifiedDCLED, dataset: List[Dict],
                        mode: str, args: argparse.Namespace) -> Dict[str, float]:
     logger.info(f"\n[TruthfulQA] Evaluating with mode: {mode}")
  
@@ -208,7 +208,7 @@ def evaluate_truthfulqa(llm: UnifiedDCSLED, dataset: List[Dict],
  
     return result_dict
    
-def evaluate_sealqa(llm: UnifiedDCSLED, dataset: List[Dict],
+def evaluate_sealqa(llm: UnifiedDCLED, dataset: List[Dict],
                    mode: str, args: argparse.Namespace) -> Dict:
     logger.info(f"[SEAL-QA] Evaluating with mode: {mode}")
  
@@ -267,3 +267,4 @@ def evaluate_sealqa(llm: UnifiedDCSLED, dataset: List[Dict],
         'total': total_samples
 
     }
+
