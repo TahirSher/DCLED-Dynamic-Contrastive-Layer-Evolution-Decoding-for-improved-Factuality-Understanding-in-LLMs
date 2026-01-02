@@ -41,7 +41,7 @@ class UnifiedDCLED:
      
         device_obj = torch.device(device) if isinstance(device, str) else device
         self.js_selector = JSLayerSelector(device_obj)
-        self.sled_engine = None
+        self.dcled_engine = None
         self.signal_computer = None
  
     def _load_model(self, model_name: str):
@@ -294,8 +294,8 @@ class UnifiedDCLED:
                 new_output_logits = dict_outputs[mature_layer].clone()
                 available_layers = [l for l in candidate_premature_layers if l in dict_outputs]
                              
-                if self.sled_engine is None:
-                    self.sled_engine = EnhancedDCLEDEvolutionEngine(config, lm_head_device)
+                if self.dcled_engine is None:
+                    self.dcled_engine = EnhancedDCLEDEvolutionEngine(config, lm_head_device)
              
                 signal_computer = DynamicLayerSignalComputer(config, lm_head_device)
              
@@ -350,7 +350,7 @@ class UnifiedDCLED:
                         total_w = sum(layer_weights) + EPS
                         layer_weights = [w / total_w for w in layer_weights]
                  
-                    proxy_gradients = self.sled_engine.compute_proxy_gradients(
+                    proxy_gradients = self.dcled_engine.compute_proxy_gradients(
                         mature_logits=current_logits,
                         premature_logits_list=premature_logits_list,
                         topk_indices=topk_indices,
@@ -433,5 +433,6 @@ class UnifiedDCLED:
             else:
 
                 raise ValueError(f"Unknown mode: {mode}")
+
 
 
