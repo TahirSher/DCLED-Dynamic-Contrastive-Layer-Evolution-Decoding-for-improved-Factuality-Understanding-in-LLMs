@@ -23,7 +23,7 @@ Current version: **1.0.0** (January 2026)
 
 ```bash
 git clone https://github.com/DCLED Team
-DCLED-Dynamic-Contrastive-Layer-Evolution-Decoding-for-improved-Factuality-Understanding-in-LLMs.git
+DCLED-Dynamic-Contrastive-Layer-Evolution-Decoding-System-for-Hallucination-Mitigation-and-Reasoning.git
 cd DCLED-FRAMEWORK
 
 ### 2.Install dependencies
