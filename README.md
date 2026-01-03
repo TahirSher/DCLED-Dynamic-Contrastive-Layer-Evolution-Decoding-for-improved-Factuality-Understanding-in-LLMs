@@ -7,7 +7,7 @@ Current version: **1.0.0** (January 2026)
 
 ## Key Features
 
-- **DCLED** — main decoding method combining SLED-style logit evolution with dynamic layer signals and adaptive contrastive DoLa
+- **DCLED** — main decoding method combining SLED-style logit evolution with dynamic layer signals and adaptive contrastive DoLa but in a novel & strong way
 - Automatic hyperparameter adaptation based on **model size** (1B → 14B+) and **dataset type**
 - Special tuning for **TruthfulQA**, **SEAL-QA** (longseal / seal_0 / seal_hard), **HotpotQA**
 - Numerically stable operations (clamped probabilities, safe log-softmax, relative-top filtering)
